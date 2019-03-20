@@ -30,6 +30,7 @@ namespace ElectionKataTests.UnitTests
         [Theory]
         [InlineData("Cardiff West, 11014, C", "Cardiff West ||")]
         [InlineData("Cardiff West, 11014, C", "Cardiff West || Conservative Party |")]
+        [InlineData("Cardiff West, 11014, C", "Cardiff West || Conservative Party | 100%")]
         public void ExtractValidDataFromASingleLine(string input, string expected)
         {
             var actual = electionResultsConverter.Convert(input);

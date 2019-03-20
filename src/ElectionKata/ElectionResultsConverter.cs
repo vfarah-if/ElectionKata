@@ -23,7 +23,7 @@ namespace ElectionKata
             }
 
             var result = electionData.Split(",", StringSplitOptions.RemoveEmptyEntries);
-            return $"{result[0]} || {partyCodes[result[2].Trim()]}";
+            return $"{result[0]} || {partyCodes[result[2].Trim()]} |";
         }
     }
 }
