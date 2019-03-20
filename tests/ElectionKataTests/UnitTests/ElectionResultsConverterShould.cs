@@ -1,6 +1,6 @@
-﻿using System;
-using ElectionKata;
+﻿using ElectionKata;
 using FluentAssertions;
+using System;
 using Xunit;
 
 namespace ElectionKataTests.UnitTests
@@ -28,9 +28,18 @@ namespace ElectionKataTests.UnitTests
         }
 
         [Theory]
-        [InlineData("Cardiff West, 11014, C", "Cardiff West ||")]
-        [InlineData("Cardiff West, 11014, C", "Cardiff West || Conservative Party |")]
-        [InlineData("Cardiff West, 11014, C", "Cardiff West || Conservative Party | 100%")]
+        [InlineData(
+            "Cardiff West, 11014, C",
+            "Cardiff West ||")]
+        [InlineData(
+            "Cardiff West, 11014, C",
+            "Cardiff West || Conservative Party |")]
+        [InlineData(
+            "Cardiff West, 11014, C",
+            "Cardiff West || Conservative Party | 100%")]
+        [InlineData(
+            "Cardiff West, 11014, C, 17803, L, 4923, UKIP, 2069, LD",
+            "Cardiff West || Conservative Party | 30.76% || Labour Party | 49.72% || UKIP | 13.75% || Liberal Democrats | 5.78%")]
         public void ExtractValidDataFromASingleLine(string input, string expected)
         {
             var actual = electionResultsConverter.Convert(input);
