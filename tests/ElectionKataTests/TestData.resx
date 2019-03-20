@@ -140,8 +140,26 @@ Batley and Spen, 15193, Ind, 2349, L, 13632, G, 50, C, 488, LD, 79, SNP, 270, UK
 Battersea, 15031, UKIP, 525, LD, 22639, C, 255, Ind, 920, L, 934, SNP, 33, G</value>
   </data>
   <data name="LargeInputExpectedResult" xml:space="preserve">
-    <value>Cardiff West || Conservative Party | 30.76% || Labour Party | 49.72% || UKIP | 13.75% || Liberal Democrats | 5.78%
-Islington South &amp; Finsbury || Labour Party | 51.45% || Conservative Party | 21.43% || Liberal Democrats | 11.02% || UKIP | 7.70% || Green Party | 7.69% || Independent | 0.70%
+    <value>Aldershot || Liberal Democrats | 14.23% || UKIP | 84.96% || Independent | 0.78% || SNP | 0.01% || Green Party | 0.01% || Conservative Party | 0.01%
+Aldridge-Brownhills || Green Party | 43.84% || Labour Party | 36.39% || Independent | 18.39% || Liberal Democrats | 0.89% || Conservative Party | 0.26% || UKIP | 0.23%
+Altrincham and Sale West || Green Party | 65.25% || SNP | 7.68% || Labour Party | 25.89% || Independent | 0.29% || Liberal Democrats | 0.03% || UKIP | 0.87%
+Amber Valley || Conservative Party | 37.32% || UKIP | 22.76% || Liberal Democrats | 20.07% || Independent | 13.40% || Green Party | 0.06% || Labour Party | 0.66% || SNP | 5.72%
+Arundel and South Downs || SNP | 30.83% || UKIP | 20.88% || Liberal Democrats | 6.97% || Independent | 18.86% || Green Party | 17.95% || Conservative Party | 1.58% || Labour Party | 2.94%
+Ashfield || Conservative Party | 4.60% || Independent | 12.24% || Labour Party | 6.31% || SNP | 72.64% || Green Party | 3.78% || Liberal Democrats | 0.32% || UKIP | 0.12%
+Ashford || SNP | 73.90% || Liberal Democrats | 3.02% || Green Party | 15.66% || Independent | 5.19% || Conservative Party | 2.24%
+Ashton-under-Lyne || SNP | 53.94% || Labour Party | 42.48% || Conservative Party | 3.56% || UKIP | 0.02% || Green Party | 0.01%
+Aylesbury || UKIP | 56.92% || Independent | 31.23% || SNP | 10.05% || Labour Party | 0.10% || Liberal Democrats | 1.70%
+Banbury || Labour Party | 27.49% || Conservative Party | 26.12% || Green Party | 26.43% || SNP | 6.44% || UKIP | 13.52%
+Barking || Labour Party | 20.81% || Liberal Democrats | 53.71% || SNP | 3.99% || Independent | 16.15% || Conservative Party | 5.33%
+Barnsley Central || Labour Party | 4.19% || Green Party | 18.00% || SNP | 52.39% || Liberal Democrats | 4.52% || Independent | 20.89%
+Barnsley East || Liberal Democrats | 81.03% || Green Party | 9.72% || Conservative Party | 4.76% || Labour Party | 4.50%
+Barrow and Furness || SNP | 43.97% || UKIP | 15.79% || Green Party | 2.88% || Labour Party | 37.36%
+Basildon and Billericay || Green Party | 73.26% || UKIP | 17.92% || Conservative Party | 4.68% || Independent | 4.14%
+Basingstoke || Green Party | 63.40% || SNP | 33.21% || Independent | 2.60% || UKIP | 0.79%
+Bassetlaw || Labour Party | 76.49% || Green Party | 1.57% || UKIP | 1.54% || SNP | 20.41%
+Bath || Labour Party | 76.19% || UKIP | 0.32% || Liberal Democrats | 4.12% || Conservative Party | 11.96% || Independent | 0.51% || SNP | 2.45% || Green Party | 4.45%
+Batley and Spen || Independent | 47.39% || Labour Party | 7.33% || Green Party | 42.52% || Conservative Party | 0.16% || Liberal Democrats | 1.52% || SNP | 0.25% || UKIP | 0.84%
+Battersea || UKIP | 37.26% || Liberal Democrats | 1.30% || Conservative Party | 56.12% || Independent | 0.63% || Labour Party | 2.28% || SNP | 2.32% || Green Party | 0.08%
 </value>
   </data>
   <data name="SmallInput" xml:space="preserve">

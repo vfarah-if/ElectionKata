@@ -2,10 +2,10 @@
 {
     internal class ElectionResult
     {
-        internal ElectionResult(string party, int voteCount)
+        internal ElectionResult(string party, double voteCount)
         {
-            this.Party = party;
-            this.VoteCount = voteCount;
+            Party = party;
+            VoteCount = voteCount;
         }
 
         public string Party { get; }

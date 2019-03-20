@@ -76,9 +76,10 @@ namespace ElectionKataTests {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Cardiff West || Conservative Party | 30.76% || Labour Party | 49.72% || UKIP | 13.75% || Liberal Democrats | 5.78%
-        ///Islington South &amp; Finsbury || Labour Party | 51.45% || Conservative Party | 21.43% || Liberal Democrats | 11.02% || UKIP | 7.70% || Green Party | 7.69% || Independent | 0.70%
-        ///.
+        ///   Looks up a localized string similar to Aldershot || Liberal Democrats | 14.23% || UKIP | 84.96% || Independent | 0.78% || SNP | 0.01% || Green Party | 0.01% || Conservative Party | 0.01%
+        ///Aldridge-Brownhills || Green Party | 43.84% || Labour Party | 36.39% || Independent | 18.39% || Liberal Democrats | 0.89% || Conservative Party | 0.26% || UKIP | 0.23%
+        ///Altrincham and Sale West || Green Party | 65.25% || SNP | 7.68% || Labour Party | 25.89% || Independent | 0.29% || Liberal Democrats | 0.03% || UKIP | 0.87%
+        ///Amber Valley || Conservative Party | [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string LargeInputExpectedResult {
             get {
