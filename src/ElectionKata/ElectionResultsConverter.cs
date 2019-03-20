@@ -10,18 +10,17 @@ namespace ElectionKata
     {
         private readonly Dictionary<string, string> partyDescriptions;
 
-        public ElectionResultsConverter(): this(new Dictionary<string, string>()
+        public ElectionResultsConverter() : this(new Dictionary<string, string>()
         {
-            { "C", "Conservative Party" },
-            { "L", "Labour Party" },
-            { "UKIP", "UKIP" },
-            { "LD", "Liberal Democrats" },
-            { "G", "Green Party" },
-            { "Ind", "Independent" },
-            { "SNP", "SNP" },
+            {"C", "Conservative Party"},
+            {"L", "Labour Party"},
+            {"UKIP", "UKIP"},
+            {"LD", "Liberal Democrats"},
+            {"G", "Green Party"},
+            {"Ind", "Independent"},
+            {"SNP", "SNP"},
         })
-        {            
-        }
+        { }
 
         public ElectionResultsConverter(Dictionary<string, string> partyDescriptions)
         {
@@ -40,16 +39,9 @@ namespace ElectionKata
             {
                 var partyData = inputLine.Split(",", StringSplitOptions.RemoveEmptyEntries);
                 var constituency = partyData[0].Trim();
-                dataBuilder.Append($"{constituency}");
-                var electionResults = ExtractElectionResults(partyData);
-                var sumOfAllVotes = electionResults.Sum(x => x.VoteCount);                
-                foreach (var electionResult in electionResults)
-                {
-                    decimal percentage = electionResult.VoteCount / sumOfAllVotes;
-                    dataBuilder.Append($" || {electionResult.Party} | {percentage:0.00%}");
-                }
-
-                dataBuilder.AppendLine();
+                var electionResults = ExtractElectionResults(partyData).AsReadOnly();
+                var constituencyResult = new ConstituencyElectionResult(constituency, electionResults);
+                dataBuilder.AppendLine(constituencyResult.ToString());
             }
 
             return dataBuilder.ToString();
