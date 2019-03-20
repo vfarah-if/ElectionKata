@@ -10,19 +10,24 @@ namespace ElectionKata
     {
         private readonly Dictionary<string, string> partyDescriptions;
 
-        public ElectionResultsConverter()
+        public ElectionResultsConverter(): this(new Dictionary<string, string>()
         {
-            this.partyDescriptions = new Dictionary<string, string>()
-            {
-                { "C", "Conservative Party" },
-                { "L", "Labour Party" },
-                { "UKIP", "UKIP" },
-                { "LD", "Liberal Democrats" },
-                { "G", "Green Party" },
-                { "Ind", "Independent" },
-                { "SNP", "SNP" },
-            };
+            { "C", "Conservative Party" },
+            { "L", "Labour Party" },
+            { "UKIP", "UKIP" },
+            { "LD", "Liberal Democrats" },
+            { "G", "Green Party" },
+            { "Ind", "Independent" },
+            { "SNP", "SNP" },
+        })
+        {            
         }
+
+        public ElectionResultsConverter(Dictionary<string, string> partyDescriptions)
+        {
+            this.partyDescriptions = partyDescriptions;
+        }
+
         public string Convert(string electionData)
         {
             if (string.IsNullOrWhiteSpace(electionData))
@@ -53,7 +58,7 @@ namespace ElectionKata
         private List<ElectionResult> ExtractElectionResults(string[] partyData)
         {
             var results = new List<ElectionResult>();
-            for (int i = 1; i <= partyData.Length - 1; i += 2)
+            for (int i = 1; i < partyData.Length - 1; i += 2)
             {
                 var voteCount = System.Convert.ToInt32(partyData[i].Trim());
                 var party = partyDescriptions[partyData[i + 1].Trim()];
