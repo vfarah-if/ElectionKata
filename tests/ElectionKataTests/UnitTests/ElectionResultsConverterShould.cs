@@ -38,14 +38,13 @@ namespace ElectionKataTests.UnitTests
             actual.Should().StartWith(expected);
         }
 
-        [Theory]
-        [InlineData(
-            "Cardiff West, 11014, C,\r\n"+
-            "Islington South & Finsbury, 22547, L",
-            "Cardiff West || Conservative Party | 100%\r\n" +
-            "Islington South & Finsbury || Labour Party | 100%\r\n")]
-        public void ExtractValidDataFromAMultiLine(string input, string expected)
+        [Fact]
+        public void ExtractValidDataFromASimpleMultiLine()
         {
+            var input = "Cardiff West, 11014, C,\r\n" +
+                        "Islington South & Finsbury, 22547, L";
+            var expected = "Cardiff West || Conservative Party | 100%\r\n" +
+                           "Islington South & Finsbury || Labour Party | 100%\r\n";
             var actual = electionResultsConverter.Convert(input);
 
             actual.Should().Be(expected);
