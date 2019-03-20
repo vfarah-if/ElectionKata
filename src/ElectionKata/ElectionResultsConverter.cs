@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using static ElectionKata.ErrorMessages;
 
@@ -7,7 +8,7 @@ namespace ElectionKata
 {
     public class ElectionResultsConverter
     {
-        private readonly Dictionary<string, string> partyDescriptions;
+        private readonly IReadOnlyDictionary<string, string> partyDescriptions;
 
         public ElectionResultsConverter() : this(new Dictionary<string, string>()
         {
@@ -21,7 +22,7 @@ namespace ElectionKata
         })
         { }
 
-        public ElectionResultsConverter(Dictionary<string, string> partyDescriptions)
+        public ElectionResultsConverter(IReadOnlyDictionary<string, string> partyDescriptions)
         {
             this.partyDescriptions = partyDescriptions;
         }
@@ -33,7 +34,7 @@ namespace ElectionKata
                 throw new ArgumentException(PollingDataIsRequired, nameof(electionData));
             }
 
-            var dataBuilder = new StringBuilder();
+            var dataBuilder = new StringBuilder(GetConstituencyElectionResults(electionData).Count());
             foreach (var constituencyElectionResult in GetConstituencyElectionResults(electionData))
             {
                 dataBuilder.AppendLine(constituencyElectionResult.ToString());
@@ -46,21 +47,21 @@ namespace ElectionKata
         {
             foreach (var inputLine in electionData.Split(Environment.NewLine, StringSplitOptions.RemoveEmptyEntries))
             {
-                var partyData = inputLine.Split(",", StringSplitOptions.RemoveEmptyEntries);
-                var constituency = partyData[0].Trim();
-                var electionResults = ExtractElectionResults(partyData).AsReadOnly();
+                var constituencyElectionStrings = inputLine.Split(",", StringSplitOptions.RemoveEmptyEntries);
+                var constituency = constituencyElectionStrings[0].Trim();
+                var electionResults = ExtractElectionResults(constituencyElectionStrings).AsReadOnly();
                 var constituencyResult = new ConstituencyElectionResult(constituency, electionResults);
                 yield return constituencyResult;
             }
         }
 
-        private List<ElectionResult> ExtractElectionResults(string[] partyData)
+        private List<ElectionResult> ExtractElectionResults(IReadOnlyList<string> constituencyElectionStrings)
         {
             var results = new List<ElectionResult>();
-            for (int i = 1; i < partyData.Length - 1; i += 2)
+            for (var i = 1; i < constituencyElectionStrings.Count - 1; i += 2)
             {
-                var voteCount = System.Convert.ToInt32(partyData[i].Trim());
-                var party = partyDescriptions[partyData[i + 1].Trim()];
+                var voteCount = System.Convert.ToInt32(constituencyElectionStrings[i].Trim());
+                var party = partyDescriptions[constituencyElectionStrings[i + 1].Trim()];
                 results.Add(new ElectionResult(party, voteCount));
             }
 
