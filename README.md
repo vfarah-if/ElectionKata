@@ -69,4 +69,4 @@ Battersea, 15031, UKIP, 525, LD, 22639, C, 255, Ind, 920, L, 934, SNP, 33, G
 ```
 
 ## .Net Core BDD Framework
-[CoreBDD](https://github.com/stevenknox/CoreBDD)
+Register `dotnet tool install -g corebdd.commandline` to run tests through the commandline. See more about [CoreBDD](https://github.com/stevenknox/CoreBDD) 
