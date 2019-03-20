@@ -8,10 +8,10 @@ Feature: ElectionResultsConverter
 
 Scenario: Convert small subset of election results to an expected format
 			Given an election result converter
-			When I receive '" + TestData.SimpleInput + "'
-			Then the data should be converted to '" + TestData.SimpleInputExpectedResult + "'
+			When I receive '" + TestData.SmallInput + "'
+			Then the data should be converted to '" + TestData.SmallInputExpectedResult + "'
 
 Scenario: Convert full election results to an expected format
 			Given an election result converter
 			When I receive '" + TestData.LargeInput + "'
-			Then the data should be converted to '" + TestData.LargeInputResult + "'
+			Then the data should be converted to '" + TestData.LargeInputExpectedResult + "'

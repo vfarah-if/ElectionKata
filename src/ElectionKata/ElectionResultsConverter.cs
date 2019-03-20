@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.Linq;
 using System.Text;
 using static ElectionKata.ErrorMessages;
 
@@ -14,7 +16,12 @@ namespace ElectionKata
             this.partyCodes = new Dictionary<string, string>()
             {
                 { "C", "Conservative Party" },
-                { "L", "Labour Party" }
+                { "L", "Labour Party" },
+                { "UKIP", "UKIP" },
+                { "LD", "Liberal Democrats" },
+                { "G", "Green Party" },
+                { "Ind", "Independent" },
+                { "SNP", "SNP" },
             };
         }
         public string Convert(string electionData)
@@ -28,10 +35,32 @@ namespace ElectionKata
             foreach (var inputLine in electionData.Split(Environment.NewLine, StringSplitOptions.RemoveEmptyEntries))
             {
                 var result = inputLine.Split(",", StringSplitOptions.RemoveEmptyEntries);
-                dataBuilder.AppendLine($"{result[0]} || {partyCodes[result[2].Trim()]} | 100%");
+                var constituency = result[0].Trim();
+                dataBuilder.Append($"{constituency}");
+                var electionResults = GetElectionResults(result);
+                var sumOfAllVotes = electionResults.Sum(x => x.VoteCount);                
+                foreach (var electionResult in electionResults)
+                {
+                    var percentage = ((electionResult.VoteCount / sumOfAllVotes) * 100).ToString("0.00",CultureInfo.InvariantCulture);
+                    dataBuilder.Append($" || {electionResult.Party} | { percentage }%");
+                }
+                dataBuilder.AppendLine();
             }
 
             return dataBuilder.ToString();
+        }
+
+        private List<ElectionResult> GetElectionResults(string[] result)
+        {
+            var results = new List<ElectionResult>();
+            for (int i = 1; i <= result.Length - 1; i += 2)
+            {
+                var voteCount = System.Convert.ToInt32(result[i].Trim());
+                var party = partyCodes[result[i + 1].Trim()];
+                results.Add(new ElectionResult(party, voteCount));
+            }
+
+            return results;
         }
     }
 }

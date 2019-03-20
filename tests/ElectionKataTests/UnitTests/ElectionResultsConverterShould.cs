@@ -36,7 +36,7 @@ namespace ElectionKataTests.UnitTests
             "Cardiff West || Conservative Party |")]
         [InlineData(
             "Cardiff West, 11014, C",
-            "Cardiff West || Conservative Party | 100%")]
+            "Cardiff West || Conservative Party | 100.00%")]
         [InlineData(
             "Cardiff West, 11014, C, 17803, L, 4923, UKIP, 2069, LD",
             "Cardiff West || Conservative Party | 30.76% || Labour Party | 49.72% || UKIP | 13.75% || Liberal Democrats | 5.78%")]
@@ -52,8 +52,8 @@ namespace ElectionKataTests.UnitTests
         {
             var input = "Cardiff West, 11014, C,\r\n" +
                         "Islington South & Finsbury, 22547, L";
-            var expected = "Cardiff West || Conservative Party | 100%\r\n" +
-                           "Islington South & Finsbury || Labour Party | 100%\r\n";
+            var expected = "Cardiff West || Conservative Party | 100.00%\r\n" +
+                           "Islington South & Finsbury || Labour Party | 100.00%\r\n";
             var actual = electionResultsConverter.Convert(input);
 
             actual.Should().Be(expected);
