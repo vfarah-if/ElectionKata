@@ -27,15 +27,14 @@ namespace ElectionKataTests.UnitTests
                 .WithMessage($"{ErrorMessages.PollingDataIsRequired}Parameter name: electionData");
         }
 
-        [Fact]
-        public void ExtractTheConstituency()
+        [Theory]
+        [InlineData("Cardiff West, 11014, C", "Cardiff West ||")]
+        [InlineData("Cardiff West, 11014, C", "Cardiff West || Conservative Party |")]
+        public void ExtractValidDataFromASingleLine(string input, string expected)
         {
-            var input = "Cardiff West, 11014, C, 17803, L, 4923, UKIP, 2069, LD";
-            var expected = "Cardiff West ||";
-
             var actual = electionResultsConverter.Convert(input);
 
-            actual.Should().Be(expected);
+            actual.Should().StartWith(expected);
         }
     }
 }
