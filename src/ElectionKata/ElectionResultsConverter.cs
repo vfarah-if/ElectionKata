@@ -12,7 +12,8 @@ namespace ElectionKata
                 throw new ArgumentException(PollingDataIsRequired, nameof(electionData));
             }
 
-            return null;
+            var result = electionData.Split(",", StringSplitOptions.RemoveEmptyEntries);
+            return $"{result[0]} ||";
         }
     }
 }
