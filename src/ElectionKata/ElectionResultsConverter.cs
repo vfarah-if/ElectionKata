@@ -31,18 +31,18 @@ namespace ElectionKata
                 throw new ArgumentException(PollingDataIsRequired, nameof(electionData));
             }
 
-            StringBuilder dataBuilder = new StringBuilder();
+            var dataBuilder = new StringBuilder();
             foreach (var inputLine in electionData.Split(Environment.NewLine, StringSplitOptions.RemoveEmptyEntries))
             {
                 var result = inputLine.Split(",", StringSplitOptions.RemoveEmptyEntries);
                 var constituency = result[0].Trim();
                 dataBuilder.Append($"{constituency}");
-                var electionResults = GetElectionResults(result);
+                var electionResults = ExtractElectionResults(result);
                 var sumOfAllVotes = electionResults.Sum(x => x.VoteCount);                
                 foreach (var electionResult in electionResults)
                 {
-                    var percentage = ((electionResult.VoteCount / sumOfAllVotes) * 100).ToString("0.00",CultureInfo.InvariantCulture);
-                    dataBuilder.Append($" || {electionResult.Party} | { percentage }%");
+                    decimal percentage = electionResult.VoteCount / sumOfAllVotes;
+                    dataBuilder.Append($" || {electionResult.Party} | {percentage:0.00%}");
                 }
                 dataBuilder.AppendLine();
             }
@@ -50,7 +50,7 @@ namespace ElectionKata
             return dataBuilder.ToString();
         }
 
-        private List<ElectionResult> GetElectionResults(string[] result)
+        private List<ElectionResult> ExtractElectionResults(string[] result)
         {
             var results = new List<ElectionResult>();
             for (int i = 1; i <= result.Length - 1; i += 2)
