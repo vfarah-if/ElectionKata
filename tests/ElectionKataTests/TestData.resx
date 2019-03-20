@@ -143,11 +143,11 @@ Battersea, 15031, UKIP, 525, LD, 22639, C, 255, Ind, 920, L, 934, SNP, 33, G</va
     <value>Cardiff West || Conservative Party | 30.76% || Labour Party | 49.72% || UKIP | 13.75% || Liberal Democrats | 5.78%
 Islington South &amp; Finsbury || Labour Party | 51.45% || Conservative Party | 21.43% || Liberal Democrats | 11.02% || UKIP | 7.70% || Green Party | 7.69% || Independent | 0.70%</value>
   </data>
-  <data name="SimpleInput" xml:space="preserve">
+  <data name="SmallInput" xml:space="preserve">
     <value>Cardiff West, 11014, C, 17803, L, 4923, UKIP, 2069, LD
 Islington South &amp; Finsbury, 22547, L, 9389, C, 4829, LD, 3375, UKIP, 3371, G, 309, Ind</value>
   </data>
-  <data name="SimpleInputExpectedResult" xml:space="preserve">
+  <data name="SmallInputExpectedResult" xml:space="preserve">
     <value>Cardiff West || Conservative Party | 30.76% || Labour Party | 49.72% || UKIP | 13.75% || Liberal Democrats | 5.78%
 Islington South &amp; Finsbury || Labour Party | 51.45% || Conservative Party | 21.43% || Liberal Democrats | 11.02% || UKIP | 7.70% || Green Party | 7.69% || Independent | 0.70%</value>
   </data>

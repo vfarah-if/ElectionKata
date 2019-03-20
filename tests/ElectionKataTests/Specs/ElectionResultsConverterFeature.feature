@@ -2,8 +2,8 @@
 
 
 Feature: ElectionResultsConverter
-	Given a short hand version of the election results
-          As a polling analyst
+	As an election data analyst
+          Given a short hand version of the election results          
           I want the election results converted to a specific format
 
 Scenario: Convert small subset of election results to an expected format

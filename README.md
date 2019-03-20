@@ -4,9 +4,9 @@ A shorthand feed with election results must be transformed into a user friendly 
 ## Results format
 
 ```
-	Given a short hand version of the election results
-    As a polling analyst
-    I want the election results converted to a specific format
+As an election data analyst
+Given a short hand version of the election results
+I want the election results converted to a specific format
 ```
 
 The fields in the data input will be separated by commas but each row will vary in length as described below.

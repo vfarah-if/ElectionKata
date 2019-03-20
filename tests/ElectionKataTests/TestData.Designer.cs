@@ -89,9 +89,9 @@ namespace ElectionKataTests {
         ///   Looks up a localized string similar to Cardiff West, 11014, C, 17803, L, 4923, UKIP, 2069, LD
         ///Islington South &amp; Finsbury, 22547, L, 9389, C, 4829, LD, 3375, UKIP, 3371, G, 309, Ind.
         /// </summary>
-        internal static string SimpleInput {
+        internal static string SmallInput {
             get {
-                return ResourceManager.GetString("SimpleInput", resourceCulture);
+                return ResourceManager.GetString("SmallInput", resourceCulture);
             }
         }
         
@@ -99,9 +99,9 @@ namespace ElectionKataTests {
         ///   Looks up a localized string similar to Cardiff West || Conservative Party | 30.76% || Labour Party | 49.72% || UKIP | 13.75% || Liberal Democrats | 5.78%
         ///Islington South &amp; Finsbury || Labour Party | 51.45% || Conservative Party | 21.43% || Liberal Democrats | 11.02% || UKIP | 7.70% || Green Party | 7.69% || Independent | 0.70%.
         /// </summary>
-        internal static string SimpleInputExpectedResult {
+        internal static string SmallInputExpectedResult {
             get {
-                return ResourceManager.GetString("SimpleInputExpectedResult", resourceCulture);
+                return ResourceManager.GetString("SmallInputExpectedResult", resourceCulture);
             }
         }
     }
