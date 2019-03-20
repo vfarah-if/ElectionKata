@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 using static ElectionKata.ErrorMessages;
 
@@ -35,16 +34,24 @@ namespace ElectionKata
             }
 
             var dataBuilder = new StringBuilder();
+            foreach (var constituencyElectionResult in GetConstituencyElectionResults(electionData))
+            {
+                dataBuilder.AppendLine(constituencyElectionResult.ToString());
+            }
+
+            return dataBuilder.ToString();
+        }
+
+        private IEnumerable<ConstituencyElectionResult> GetConstituencyElectionResults(string electionData)
+        {
             foreach (var inputLine in electionData.Split(Environment.NewLine, StringSplitOptions.RemoveEmptyEntries))
             {
                 var partyData = inputLine.Split(",", StringSplitOptions.RemoveEmptyEntries);
                 var constituency = partyData[0].Trim();
                 var electionResults = ExtractElectionResults(partyData).AsReadOnly();
                 var constituencyResult = new ConstituencyElectionResult(constituency, electionResults);
-                dataBuilder.AppendLine(constituencyResult.ToString());
+                yield return constituencyResult;
             }
-
-            return dataBuilder.ToString();
         }
 
         private List<ElectionResult> ExtractElectionResults(string[] partyData)
