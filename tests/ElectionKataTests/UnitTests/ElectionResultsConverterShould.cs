@@ -2,7 +2,6 @@
 using ElectionKata;
 using FluentAssertions;
 using Xunit;
-using static System.Environment;
 
 namespace ElectionKataTests.UnitTests
 {
@@ -41,9 +40,10 @@ namespace ElectionKataTests.UnitTests
 
         [Theory]
         [InlineData(
-            "Cardiff West, 11014, C,\r\nIslington South & Finsbury, 22547, L",
-            "Cardiff West || Conservative Party | 100%" +
-            "Islington South & Finsbury || Labour Party | 100% ||")]
+            "Cardiff West, 11014, C,\r\n"+
+            "Islington South & Finsbury, 22547, L",
+            "Cardiff West || Conservative Party | 100%\r\n" +
+            "Islington South & Finsbury || Labour Party | 100%\r\n")]
         public void ExtractValidDataFromAMultiLine(string input, string expected)
         {
             var actual = electionResultsConverter.Convert(input);

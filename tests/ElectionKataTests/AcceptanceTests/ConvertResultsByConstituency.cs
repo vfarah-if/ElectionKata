@@ -28,7 +28,7 @@ namespace ElectionKataTests.AcceptanceTests
             {
                 actualResult = electionResultsConverter.Convert(LargeInput);
             });
-            Then($"the data should be converted to '{LargeInputResult}'", () => actualResult.ShouldBe(LargeInputResult));
+            Then($"the data should be converted to '{LargeInputExpectedResult}'", () => actualResult.ShouldBe(LargeInputExpectedResult));
         }
     }
 
