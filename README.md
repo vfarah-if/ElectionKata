@@ -3,6 +3,12 @@ A shorthand feed with election results must be transformed into a user friendly 
 
 ## Results format
 
+```
+	Given a short hand version of the election results
+    As a polling analyst
+    I want the election results converted to a specific format
+```
+
 The fields in the data input will be separated by commas but each row will vary in length as described below.
 
 A result will consist of:
@@ -61,3 +67,6 @@ Bath, 20347, L, 85, UKIP, 1101, LD, 3195, C, 137, Ind, 654, SNP, 1188, G
 Batley and Spen, 15193, Ind, 2349, L, 13632, G, 50, C, 488, LD, 79, SNP, 270, UKIP
 Battersea, 15031, UKIP, 525, LD, 22639, C, 255, Ind, 920, L, 934, SNP, 33, G
 ```
+
+## .Net Core BDD Framework
+[CoreBDD](https://github.com/stevenknox/CoreBDD)
