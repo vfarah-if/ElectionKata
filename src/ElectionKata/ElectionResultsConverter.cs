@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Globalization;
 using System.Linq;
 using System.Text;
 using static ElectionKata.ErrorMessages;
@@ -9,11 +8,11 @@ namespace ElectionKata
 {
     public class ElectionResultsConverter
     {
-        private readonly Dictionary<string, string> partyCodes;
+        private readonly Dictionary<string, string> partyDescriptions;
 
         public ElectionResultsConverter()
         {
-            this.partyCodes = new Dictionary<string, string>()
+            this.partyDescriptions = new Dictionary<string, string>()
             {
                 { "C", "Conservative Party" },
                 { "L", "Labour Party" },
@@ -34,29 +33,30 @@ namespace ElectionKata
             var dataBuilder = new StringBuilder();
             foreach (var inputLine in electionData.Split(Environment.NewLine, StringSplitOptions.RemoveEmptyEntries))
             {
-                var result = inputLine.Split(",", StringSplitOptions.RemoveEmptyEntries);
-                var constituency = result[0].Trim();
+                var partyData = inputLine.Split(",", StringSplitOptions.RemoveEmptyEntries);
+                var constituency = partyData[0].Trim();
                 dataBuilder.Append($"{constituency}");
-                var electionResults = ExtractElectionResults(result);
+                var electionResults = ExtractElectionResults(partyData);
                 var sumOfAllVotes = electionResults.Sum(x => x.VoteCount);                
                 foreach (var electionResult in electionResults)
                 {
                     decimal percentage = electionResult.VoteCount / sumOfAllVotes;
                     dataBuilder.Append($" || {electionResult.Party} | {percentage:0.00%}");
                 }
+
                 dataBuilder.AppendLine();
             }
 
             return dataBuilder.ToString();
         }
 
-        private List<ElectionResult> ExtractElectionResults(string[] result)
+        private List<ElectionResult> ExtractElectionResults(string[] partyData)
         {
             var results = new List<ElectionResult>();
-            for (int i = 1; i <= result.Length - 1; i += 2)
+            for (int i = 1; i <= partyData.Length - 1; i += 2)
             {
-                var voteCount = System.Convert.ToInt32(result[i].Trim());
-                var party = partyCodes[result[i + 1].Trim()];
+                var voteCount = System.Convert.ToInt32(partyData[i].Trim());
+                var party = partyDescriptions[partyData[i + 1].Trim()];
                 results.Add(new ElectionResult(party, voteCount));
             }
 
