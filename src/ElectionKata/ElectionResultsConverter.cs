@@ -34,8 +34,9 @@ namespace ElectionKata
                 throw new ArgumentException(PollingDataIsRequired, nameof(electionData));
             }
 
-            var dataBuilder = new StringBuilder(GetConstituencyElectionResults(electionData).Count());
-            foreach (var constituencyElectionResult in GetConstituencyElectionResults(electionData))
+            var constituencyElectionResults = GetConstituencyElectionResults(electionData).ToList();
+            var dataBuilder = new StringBuilder(constituencyElectionResults.Count);
+            foreach (var constituencyElectionResult in constituencyElectionResults)
             {
                 dataBuilder.AppendLine(constituencyElectionResult.ToString());
             }
