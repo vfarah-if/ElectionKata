@@ -68,6 +68,11 @@ Batley and Spen, 15193, Ind, 2349, L, 13632, G, 50, C, 488, LD, 79, SNP, 270, UK
 Battersea, 15031, UKIP, 525, LD, 22639, C, 255, Ind, 920, L, 934, SNP, 33, G
 ```
 
+## CRC Card
+Class Responsibility Collaboration brainstorm shows the class collaboration and the responsibilities of each class. The only missing object is the repository, which I felt was not necessary as I had a mechanism to constructor inject the data within the class without making it the responsibility.
+
+!["CRC design"](screenshots/crc.png)
+
 ## .Net Core BDD Framework
 Register `dotnet tool install -g corebdd.commandline` to run tests through the commandline. See more about [CoreBDD](https://github.com/stevenknox/CoreBDD)
 The feature spec is automatically generated and follows the typical [gherkin syntax](https://docs.cucumber.io/gherkin/)
