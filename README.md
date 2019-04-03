@@ -69,7 +69,7 @@ Battersea, 15031, UKIP, 525, LD, 22639, C, 255, Ind, 920, L, 934, SNP, 33, G
 ```
 
 ## CRC Card
-Class Responsibility Collaboration brainstorm shows the class collaboration and the responsibilities of each class. The only missing object is the repository, which I felt was not necessary as I had a mechanism to constructor inject the data within the class without making it the responsibility.
+Class Responsibility Collaboration brainstorm shows the class collaboration and the responsibilities of each class.
 
 !["CRC design"](screenshots/crc.png)
 

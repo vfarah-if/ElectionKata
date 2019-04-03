@@ -8,23 +8,11 @@ namespace ElectionKata
 {
     public class ElectionResultsConverter
     {
-        private readonly IReadOnlyDictionary<string, string> partyDescriptions;
+        private readonly PartyRepository partyRepository;
 
-        public ElectionResultsConverter() : this(new Dictionary<string, string>()
+        public ElectionResultsConverter(PartyRepository partyRepository)
         {
-            {"C", "Conservative Party"},
-            {"L", "Labour Party"},
-            {"UKIP", "UKIP"},
-            {"LD", "Liberal Democrats"},
-            {"G", "Green Party"},
-            {"Ind", "Independent"},
-            {"SNP", "SNP"},
-        })
-        { }
-
-        public ElectionResultsConverter(IReadOnlyDictionary<string, string> partyDescriptions)
-        {
-            this.partyDescriptions = partyDescriptions;
+            this.partyRepository = partyRepository;
         }
 
         public string Convert(string electionData)
@@ -62,7 +50,8 @@ namespace ElectionKata
             for (var i = 1; i < constituencyElectionStrings.Count - 1; i += 2)
             {
                 var voteCount = System.Convert.ToInt32(constituencyElectionStrings[i].Trim());
-                var party = partyDescriptions[constituencyElectionStrings[i + 1].Trim()];
+                var partyCode = constituencyElectionStrings[i + 1].Trim();
+                var party = partyRepository.GetPartyDescription(partyCode);
                 results.Add(new ElectionResult(party, voteCount));
             }
 

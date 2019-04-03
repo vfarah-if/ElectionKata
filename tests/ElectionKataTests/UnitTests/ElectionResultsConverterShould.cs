@@ -1,6 +1,7 @@
 ﻿using ElectionKata;
 using FluentAssertions;
 using System;
+using Moq;
 using Xunit;
 using static System.Environment;
 
@@ -9,10 +10,21 @@ namespace ElectionKataTests.UnitTests
     public class ElectionResultsConverterShould
     {
         private readonly ElectionResultsConverter electionResultsConverter;
+        private Mock<PartyRepository> partyRepositoryMock;
 
         public ElectionResultsConverterShould()
         {
-            electionResultsConverter = new ElectionResultsConverter();
+            SetupPartyRepositoryWithMockData();
+            electionResultsConverter = new ElectionResultsConverter(partyRepositoryMock.Object);
+        }
+
+        private void SetupPartyRepositoryWithMockData()
+        {
+            partyRepositoryMock = new Mock<PartyRepository>();
+            partyRepositoryMock.Setup(x => x.GetPartyDescription("C")).Returns("Conservative Party");
+            partyRepositoryMock.Setup(x => x.GetPartyDescription("L")).Returns("Labour Party");
+            partyRepositoryMock.Setup(x => x.GetPartyDescription("UKIP")).Returns("UKIP");
+            partyRepositoryMock.Setup(x => x.GetPartyDescription("LD")).Returns("Liberal Democrats");
         }
 
         [Theory]

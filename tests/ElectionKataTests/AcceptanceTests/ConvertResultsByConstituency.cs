@@ -12,7 +12,7 @@ namespace ElectionKataTests.AcceptanceTests
         [Scenario("Convert small subset of election results to an expected format")]
         public void ConvertSimpleElectionResultsAsExpected()
         {
-            Given("an election result converter", () => electionResultsConverter = new ElectionResultsConverter());
+            Given("an election result converter", () => electionResultsConverter = new ElectionResultsConverter(PartyRepository.Create()));
             When($"I receive '{SmallInput}'", () =>
             {
                 actualResult = electionResultsConverter.Convert(SmallInput);
@@ -23,7 +23,7 @@ namespace ElectionKataTests.AcceptanceTests
         [Scenario("Convert full election results to an expected format")]
         public void ConvertLargeElectionResultsAsExpected()
         {
-            Given("an election result converter", () => electionResultsConverter = new ElectionResultsConverter());
+            Given("an election result converter", () => electionResultsConverter = new ElectionResultsConverter(PartyRepository.Create()));
             When($"I receive '{LargeInput}'", () =>
             {
                 actualResult = electionResultsConverter.Convert(LargeInput);
