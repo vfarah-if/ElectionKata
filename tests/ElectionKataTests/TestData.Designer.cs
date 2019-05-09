@@ -99,8 +99,7 @@ namespace ElectionKataTests {
         
         /// <summary>
         ///   Looks up a localized string similar to Cardiff West || Conservative Party | 30.76% || Labour Party | 49.72% || UKIP | 13.75% || Liberal Democrats | 5.78%
-        ///Islington South &amp; Finsbury || Labour Party | 51.45% || Conservative Party | 21.43% || Liberal Democrats | 11.02% || UKIP | 7.70% || Green Party | 7.69% || Independent | 0.71%
-        ///.
+        ///Islington South &amp; Finsbury || Labour Party | 51.45% || Conservative Party | 21.43% || Liberal Democrats | 11.02% || UKIP | 7.70% || Green Party | 7.69% || Independent | 0.71%.
         /// </summary>
         internal static string SmallInputExpectedResult {
             get {

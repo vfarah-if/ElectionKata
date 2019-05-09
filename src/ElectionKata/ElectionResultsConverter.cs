@@ -41,7 +41,7 @@ namespace ElectionKata
                 dataBuilder.AppendLine(constituencyElectionResult.ToString());
             }
 
-            return dataBuilder.ToString();
+            return dataBuilder.ToString().RemoveLastNewLine();
         }
 
         private IEnumerable<ConstituencyElectionResult> GetConstituencyElectionResults(string electionData)

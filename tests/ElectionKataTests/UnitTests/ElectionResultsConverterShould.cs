@@ -54,7 +54,7 @@ namespace ElectionKataTests.UnitTests
             var input = "Cardiff West, 11014, C," + NewLine +
                         "Islington South & Finsbury, 22547, L";
             var expected = $"Cardiff West || Conservative Party | 100.00%" + NewLine +
-                           "Islington South & Finsbury || Labour Party | 100.00%" + NewLine;
+                           "Islington South & Finsbury || Labour Party | 100.00%";
 
             var actual = electionResultsConverter.Convert(input);
 
