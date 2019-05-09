@@ -37,11 +37,23 @@ namespace ElectionKata
             foreach (var inputLine in electionData.Split(Environment.NewLine, StringSplitOptions.RemoveEmptyEntries))
             {
                 var constituencyElectionStrings = inputLine.Split(",", StringSplitOptions.RemoveEmptyEntries);
+                if (IsEvenOrEmpty(constituencyElectionStrings))
+                {
+                    throw new InvalidVotingDataFormatException();
+                }
                 var constituency = constituencyElectionStrings[0].Trim();
                 var electionResults = ExtractElectionResults(constituencyElectionStrings).AsReadOnly();
                 var constituencyResult = new ConstituencyElectionResult(constituency, electionResults);
                 yield return constituencyResult;
             }
+        }
+
+        private static bool IsEvenOrEmpty(IReadOnlyCollection<string> constituencyElectionStrings)
+        {
+            var stringCount = constituencyElectionStrings.Count;
+            var isEmpty = stringCount == 0;
+            var isEven = stringCount % 2 == 0;
+            return isEmpty || isEven;
         }
 
         private List<ElectionResult> ExtractElectionResults(IReadOnlyList<string> constituencyElectionStrings)

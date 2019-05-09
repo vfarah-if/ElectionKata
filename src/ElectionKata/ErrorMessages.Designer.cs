@@ -61,6 +61,15 @@ namespace ElectionKata {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Voting data should be in the expected format of [Constituency Name], ([Vote Count], [Party Code]).
+        /// </summary>
+        public static string InvalidElectionResultData {
+            get {
+                return ResourceManager.GetString("InvalidElectionResultData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Polling data is required.
         /// </summary>
         public static string PollingDataIsRequired {

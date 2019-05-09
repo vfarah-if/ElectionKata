@@ -41,6 +41,22 @@ namespace ElectionKataTests.UnitTests
         }
 
         [Theory]
+        [InlineData("Constituency Name, 122")]
+        [InlineData("Cardiff West, 11014, C, @NewLine")]
+        public void ThrowAnInvalidVotingDataFormatExceptionWhenDataNotInExpectedFormat(string invalidData)
+        {
+            invalidData = invalidData.Replace("@NewLine", NewLine);
+            Action action = () => this.electionResultsConverter.Convert(invalidData);
+
+            action.Should()
+                .Throw<InvalidVotingDataFormatException>()
+                .WithMessage(ErrorMessages.InvalidElectionResultData);
+        }
+
+        [Theory]
+        [InlineData(
+            "Cardiff West",
+            "Cardiff West ||")]
         [InlineData(
             "Cardiff West, 11014, C",
             "Cardiff West ||")]
