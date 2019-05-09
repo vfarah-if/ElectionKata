@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="LargeInput" xml:space="preserve">
+    <value>Aldershot, 4445, LD, 26545, UKIP, 244, Ind, 3, SNP, 4, G, 3, C
+Aldridge-Brownhills, 12703, G, 10543, L, 5327, Ind, 258, LD, 76, C, 67, UKIP
+Altrincham and Sale West, 28667, G, 3372, SNP, 11372, L, 127, Ind, 13, LD, 381, UKIP
+Amber Valley, 15242, C, 9295, UKIP, 8197, LD, 5474, Ind, 26, G, 269, L, 2336, SNP
+Arundel and South Downs, 14939, SNP, 10117, UKIP, 3379, LD, 9137, Ind, 8699, G, 765, C, 1423, L
+Ashfield, 2012, C, 5352, Ind, 2759, L, 31770, SNP, 1651, G, 138, LD, 53, UKIP
+Ashford, 36165, SNP, 1477, LD, 7663, G, 2538, Ind, 1098, C
+Ashton-under-Lyne, 20440, SNP, 16099, L, 1348, C, 6, UKIP, 4, G
+Aylesbury, 26312, UKIP, 14437, Ind, 4646, SNP, 46, L, 784, LD
+Banbury, 15440, L, 14671, C, 14842, G, 3615, SNP, 7590, UKIP
+Barking, 10739, L, 27717, LD, 2061, SNP, 8334, Ind, 2752, C
+Barnsley Central, 1804, L, 7745, G, 22535, SNP, 1944, LD, 8988, Ind
+Barnsley East, 35886, LD, 4305, G, 2106, C, 1993, L
+Barrow and Furness, 19552, SNP, 7020, UKIP, 1281, G, 16610, L
+Basildon and Billericay, 32421, G, 7929, UKIP, 2072, C, 1833, Ind
+Basingstoke, 33220, G, 17403, SNP, 1362, Ind, 413, UKIP
+Bassetlaw, 26431, L, 541, G, 531, UKIP, 7052, SNP
+Bath, 20347, L, 85, UKIP, 1101, LD, 3195, C, 137, Ind, 654, SNP, 1188, G
+Batley and Spen, 15193, Ind, 2349, L, 13632, G, 50, C, 488, LD, 79, SNP, 270, UKIP
+Battersea, 15031, UKIP, 525, LD, 22639, C, 255, Ind, 920, L, 934, SNP, 33, G</value>
+  </data>
+  <data name="LargeInputExpectedResult" xml:space="preserve">
+    <value>Aldershot || Liberal Democrats | 14.23% || UKIP | 84.96% || Independent | 0.78% || SNP | 0.01% || Green Party | 0.01% || Conservative Party | 0.01%
+Aldridge-Brownhills || Green Party | 43.84% || Labour Party | 36.39% || Independent | 18.39% || Liberal Democrats | 0.89% || Conservative Party | 0.26% || UKIP | 0.23%
+Altrincham and Sale West || Green Party | 65.25% || SNP | 7.68% || Labour Party | 25.89% || Independent | 0.29% || Liberal Democrats | 0.03% || UKIP | 0.87%
+Amber Valley || Conservative Party | 37.32% || UKIP | 22.76% || Liberal Democrats | 20.07% || Independent | 13.40% || Green Party | 0.06% || Labour Party | 0.66% || SNP | 5.72%
+Arundel and South Downs || SNP | 30.83% || UKIP | 20.88% || Liberal Democrats | 6.97% || Independent | 18.86% || Green Party | 17.95% || Conservative Party | 1.58% || Labour Party | 2.94%
+Ashfield || Conservative Party | 4.60% || Independent | 12.24% || Labour Party | 6.31% || SNP | 72.64% || Green Party | 3.78% || Liberal Democrats | 0.32% || UKIP | 0.12%
+Ashford || SNP | 73.90% || Liberal Democrats | 3.02% || Green Party | 15.66% || Independent | 5.19% || Conservative Party | 2.24%
+Ashton-under-Lyne || SNP | 53.94% || Labour Party | 42.48% || Conservative Party | 3.56% || UKIP | 0.02% || Green Party | 0.01%
+Aylesbury || UKIP | 56.92% || Independent | 31.23% || SNP | 10.05% || Labour Party | 0.10% || Liberal Democrats | 1.70%
+Banbury || Labour Party | 27.49% || Conservative Party | 26.12% || Green Party | 26.43% || SNP | 6.44% || UKIP | 13.52%
+Barking || Labour Party | 20.81% || Liberal Democrats | 53.71% || SNP | 3.99% || Independent | 16.15% || Conservative Party | 5.33%
+Barnsley Central || Labour Party | 4.19% || Green Party | 18.00% || SNP | 52.39% || Liberal Democrats | 4.52% || Independent | 20.89%
+Barnsley East || Liberal Democrats | 81.03% || Green Party | 9.72% || Conservative Party | 4.76% || Labour Party | 4.50%
+Barrow and Furness || SNP | 43.97% || UKIP | 15.79% || Green Party | 2.88% || Labour Party | 37.36%
+Basildon and Billericay || Green Party | 73.26% || UKIP | 17.92% || Conservative Party | 4.68% || Independent | 4.14%
+Basingstoke || Green Party | 63.40% || SNP | 33.21% || Independent | 2.60% || UKIP | 0.79%
+Bassetlaw || Labour Party | 76.49% || Green Party | 1.57% || UKIP | 1.54% || SNP | 20.41%
+Bath || Labour Party | 76.19% || UKIP | 0.32% || Liberal Democrats | 4.12% || Conservative Party | 11.96% || Independent | 0.51% || SNP | 2.45% || Green Party | 4.45%
+Batley and Spen || Independent | 47.39% || Labour Party | 7.33% || Green Party | 42.52% || Conservative Party | 0.16% || Liberal Democrats | 1.52% || SNP | 0.25% || UKIP | 0.84%
+Battersea || UKIP | 37.26% || Liberal Democrats | 1.30% || Conservative Party | 56.12% || Independent | 0.63% || Labour Party | 2.28% || SNP | 2.32% || Green Party | 0.08%</value>
+  </data>
+  <data name="SmallInput" xml:space="preserve">
+    <value>Cardiff West, 11014, C, 17803, L, 4923, UKIP, 2069, LD
+Islington South &amp; Finsbury, 22547, L, 9389, C, 4829, LD, 3375, UKIP, 3371, G, 309, Ind</value>
+  </data>
+  <data name="SmallInputExpectedResult" xml:space="preserve">
+    <value>Cardiff West || Conservative Party | 30.76% || Labour Party | 49.72% || UKIP | 13.75% || Liberal Democrats | 5.78%
+Islington South &amp; Finsbury || Labour Party | 51.45% || Conservative Party | 21.43% || Liberal Democrats | 11.02% || UKIP | 7.70% || Green Party | 7.69% || Independent | 0.71%</value>
+  </data>
+</root>
